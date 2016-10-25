@@ -1,7 +1,10 @@
 <?php
 require 'vendor/autoload.php';
-
+//environment variables
 define('DEBUG', true);
+
+//app constants
+define('VIEW_DIRECTORY','views/');
 
 //slim config
 $config = [];
@@ -21,9 +24,9 @@ $container = $app->getContainer();
 
 //register view system with slim
 $container['view'] = function ($container) {
-    return new \Slim\Views\PhpRenderer('views/');
+    return new \Slim\Views\PhpRenderer(VIEW_DIRECTORY);
 };
-$container['renderer'] = new \Slim\Views\PhpRenderer("./views");
+$container['renderer'] = new \Slim\Views\PhpRenderer(VIEW_DIRECTORY);
 
 
 //load bootstrapper

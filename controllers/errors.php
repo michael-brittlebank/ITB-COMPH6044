@@ -12,8 +12,13 @@ $container['notFoundHandler'] = function ($container) {
 //general error
 $container['errorHandler'] = function ($container) {
     return function ($request, $response, $exception) use ($container) {
+        $viewData = [];
+        if (DEBUG){
+            $viewData['exception'] = $exception;
+        }
+        
         return $container['view']
-            ->render($response, 'errors/500.phtml')
+            ->render($response, 'errors/500.phtml', $viewData)
             ->withStatus(500);
     };
 };
