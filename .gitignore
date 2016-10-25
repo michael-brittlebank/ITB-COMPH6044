@@ -1,4 +1,8 @@
-node_modules
-bower_components
+#ide
 .DS_Store
-.idea
+.idea/
+
+#dependencies
+vendor/
+node_modules/
+bower_components/
