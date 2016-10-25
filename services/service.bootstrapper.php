@@ -1,10 +1,10 @@
-<?php 
+<?php
 
 //controllers
 $controllerPath = 'controllers';
 $controllerFiles = [
-    'errors.php',
-    'client.php'
+    'controller.errors.php',
+    'controller.client.php'
 ];
 
 //load files

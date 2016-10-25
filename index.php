@@ -30,6 +30,6 @@ $container['renderer'] = new \Slim\Views\PhpRenderer(VIEW_DIRECTORY);
 
 
 //load bootstrapper
-include_once('services/bootstrapper.php');
+include_once('services/service.bootstrapper.php');
 
 $app->run();

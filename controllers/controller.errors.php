@@ -3,8 +3,9 @@
 //404
 $container['notFoundHandler'] = function ($container) {
     return function ($request, $response) use ($container) {
+        $viewData['pageTitle'] = '404 Error';
         return $container['view']
-            ->render($response, 'errors/404.phtml')
+            ->render($response, 'errors/404.phtml', $viewData)
             ->withStatus(404);
     };
 };
@@ -12,7 +13,7 @@ $container['notFoundHandler'] = function ($container) {
 //general error
 $container['errorHandler'] = function ($container) {
     return function ($request, $response, $exception) use ($container) {
-        $viewData = [];
+        $viewData['pageTitle'] = '500 Error';
         if (DEBUG){
             $viewData['exception'] = $exception;
         }
