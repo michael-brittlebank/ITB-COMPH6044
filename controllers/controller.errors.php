@@ -17,7 +17,6 @@ $container['errorHandler'] = function ($container) {
         if (DEBUG){
             $viewData['exception'] = $exception;
         }
-        
         return $container['view']
             ->render($response, 'errors/500.phtml', $viewData)
             ->withStatus(500);

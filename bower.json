@@ -1,0 +1,17 @@
+{
+  "name": "ITB-COMPH6044",
+  "version": "1.0.0",
+  "authors": [],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components"
+  ],
+  "dependencies": {
+    "velocity": "1.2.3",
+    "bluebird": "3.3.4",
+    "jquery": "3.0.0",
+    "normalize-css": "4.1.1"
+  }
+}

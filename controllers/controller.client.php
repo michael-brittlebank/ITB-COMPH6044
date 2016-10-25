@@ -1,5 +1,6 @@
 <?php
 
+//homepage
 $app->get('/', function ($request, $response) {
     $viewData['pageTitle'] = 'Homepage';
     return $this->renderer->render($response, 'homepage.phtml', $viewData);
