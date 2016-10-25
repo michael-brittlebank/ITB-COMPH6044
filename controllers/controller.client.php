@@ -2,7 +2,6 @@
 
 $app->get('/', function ($request, $response) {
     $viewData['pageTitle'] = 'Homepage';
-    $viewData['welcomeMessage'] = 'Hello Everyone';
     return $this->renderer->render($response, 'homepage.phtml', $viewData);
 });
 
