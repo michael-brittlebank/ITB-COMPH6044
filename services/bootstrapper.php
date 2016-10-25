@@ -3,6 +3,7 @@
 //controllers
 $controllerPath = 'controllers';
 $controllerFiles = [
+    'errors.php',
     'client.php'
 ];
 

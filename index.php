@@ -1,15 +1,30 @@
 <?php
 require 'vendor/autoload.php';
 
-$app = new \Slim\App;
+define('DEBUG', true);
 
-// Get container
+//slim config
+$config = [];
+if (DEBUG === true){
+    $config['settings'] = [
+        'displayErrorDetails' => true
+    ];
+}
+
+
+//create slim app
+$app = new \Slim\App($config);
+
+
+//get slim container
 $container = $app->getContainer();
 
-// Register component on container
+//register view system with slim
 $container['view'] = function ($container) {
     return new \Slim\Views\PhpRenderer('views/');
 };
+$container['renderer'] = new \Slim\Views\PhpRenderer("./views");
+
 
 //load bootstrapper
 include_once('services/bootstrapper.php');
