@@ -8,10 +8,11 @@ $app->get('/', function ($request, $response) {
 
 //default page handler
 $app->get('/{page}', function ($request, $response, $args) use ($app) {
-    $viewData['pageTitle'] = 'Homepage';
-    $pageName = $args['page'].'.phtml';
-    if(file_exists(VIEW_DIRECTORY.$pageName)){
-        return $this->renderer->render($response, $pageName, $viewData);
+    $pageName = $args['page'];
+    $viewData['pageTitle'] = ucwords($pageName);
+    $fileName = $pageName.'.phtml';
+    if(file_exists(VIEW_DIRECTORY.$fileName)){
+        return $this->renderer->render($response, $fileName, $viewData);
     } else {
         throw new \Slim\Exception\NotFoundException($request, $response);
     }
