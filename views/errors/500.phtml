@@ -1,7 +1,11 @@
-<?php include_once('views/partials/header.phtml');?>
-
-    500 error
-<br/>
-<br/>
-<?php var_dump($exception);
+<?php
+include_once('views/partials/header.phtml');
+if(empty($exception)){ ?>
+    <section class="container">
+        <h1 class="page-title">500 - Error</h1>
+        <h3 class="text-center">Sorry, something went wrong.  Please try again later.</h3>
+    </section>
+<?php } else {
+    var_dump($exception);
+}
 include_once('views/partials/footer.phtml');

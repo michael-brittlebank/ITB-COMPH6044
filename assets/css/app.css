@@ -2,14 +2,25 @@
 /*-----------------------------*/
 html,body,p,a,blockquote {
     font-family: 'Playfair Display', Georgia, "Times New Roman", Times, serif;
+    color: #393939;
 }
 
 h1,h2,h3,h4,h5 {
     font-family: "Raleway","HelveticaNeue", Helvetica Neue, Helvetica, Tahoma, Geneva, Arial, sans-serif;
+    color: #393939;
 }
 
 img {
     max-width: 100%;
+}
+
+a {
+    transition: color 300ms ease-out 0s;
+    text-decoration: none;
+}
+
+a:hover {
+    color: #d3d3d3;
 }
 
 /* helper classes */
@@ -33,4 +44,10 @@ img {
 
 .text-right {
     text-align: right;
+}
+
+/* shared */
+
+.page-title {
+    text-align: center;
 }

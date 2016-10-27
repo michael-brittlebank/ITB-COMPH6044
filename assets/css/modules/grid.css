@@ -21,6 +21,11 @@
 /* columns */
 /*-----------------------------*/
 
+/* equally distribute remaining content */
+.col {
+    flex-grow: 1;
+}
+
 /* mobile */
 .col-sm-1 {
     flex-basis: 8.33333333%;
