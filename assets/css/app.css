@@ -1,7 +1,7 @@
 /* core */
 /*-----------------------------*/
 html,body,p,a,blockquote {
-    font-family: 'Playfair Display', Georgia, "Times New Roman", Times, serif;
+    font-family: "Proza Libre", "HelveticaNeue", Helvetica Neue, Helvetica, Tahoma, Geneva, Arial, sans-serif;
     color: #393939;
 }
 
@@ -50,4 +50,5 @@ a:hover {
 
 .page-title {
     text-align: center;
+    text-transform: uppercase;
 }
