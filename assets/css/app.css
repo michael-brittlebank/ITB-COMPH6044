@@ -1,5 +1,13 @@
 /* core */
 /*-----------------------------*/
+html,body,p,a,blockquote {
+    font-family: 'Playfair Display', Georgia, "Times New Roman", Times, serif;
+}
+
+h1,h2,h3,h4,h5 {
+    font-family: "Raleway","HelveticaNeue", Helvetica Neue, Helvetica, Tahoma, Geneva, Arial, sans-serif;
+}
+
 img {
     max-width: 100%;
 }
