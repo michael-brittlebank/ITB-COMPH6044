@@ -14,7 +14,6 @@ if (DEBUG === true){
     ];
 }
 
-
 //create slim app
 $app = new \Slim\App($config);
 
@@ -27,7 +26,6 @@ $container['view'] = function () {
     return new \Slim\Views\PhpRenderer(VIEW_DIRECTORY);
 };
 $container['renderer'] = new \Slim\Views\PhpRenderer(VIEW_DIRECTORY);
-
 
 //load bootstrapper
 include_once('app/services/bootstrapper.php');

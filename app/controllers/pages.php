@@ -20,7 +20,7 @@ $app->get('/{page}', function ($request, $response, $args) use ($app) {
     }
 });
 
-//
+//subdirectory pages
 $app->get('/{directory}/{page}', function ($request, $response, $args) use ($app) {
     $pageName = strtolower($args['page']);
     $directoryName = strtolower($args['directory']);
