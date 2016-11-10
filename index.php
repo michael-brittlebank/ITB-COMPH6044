@@ -23,13 +23,13 @@ $app = new \Slim\App($config);
 $container = $app->getContainer();
 
 //register view system with slim
-$container['view'] = function ($container) {
+$container['view'] = function () {
     return new \Slim\Views\PhpRenderer(VIEW_DIRECTORY);
 };
 $container['renderer'] = new \Slim\Views\PhpRenderer(VIEW_DIRECTORY);
 
 
 //load bootstrapper
-include_once('services/service.bootstrapper.php');
+include_once('services/bootstrapper.php');
 
 $app->run();

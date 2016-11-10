@@ -3,8 +3,8 @@
 //controllers
 $controllerPath = 'controllers';
 $controllerFiles = [
-    'controller.errors.php',
-    'controller.client.php'
+    'errors.php',
+    'pages.php'
 ];
 
 //load files
