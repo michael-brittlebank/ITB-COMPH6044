@@ -4,6 +4,7 @@
 $container['notFoundHandler'] = function ($container) {
     return function ($request, $response) use ($container) {
         $viewData['pageTitle'] = '404 Error';
+        $viewData['viewsDirectory'] = VIEW_DIRECTORY;
         return $container['view']
             ->render($response, 'errors/404.phtml', $viewData)
             ->withStatus(404);
@@ -14,6 +15,7 @@ $container['notFoundHandler'] = function ($container) {
 $container['errorHandler'] = function ($container) {
     return function ($request, $response, $exception) use ($container) {
         $viewData['pageTitle'] = '500 Error';
+        $viewData['viewsDirectory'] = VIEW_DIRECTORY;
         if (DEBUG){
             $viewData['exception'] = $exception;
         }

@@ -4,7 +4,7 @@ require 'vendor/autoload.php';
 define('DEBUG', true);
 
 //app constants
-define('VIEW_DIRECTORY','views/');
+define('VIEW_DIRECTORY','webapp/views/');
 
 //slim config
 $config = [];
@@ -30,6 +30,6 @@ $container['renderer'] = new \Slim\Views\PhpRenderer(VIEW_DIRECTORY);
 
 
 //load bootstrapper
-include_once('services/bootstrapper.php');
+include_once('app/services/bootstrapper.php');
 
 $app->run();

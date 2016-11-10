@@ -13,15 +13,15 @@ module.exports = function(grunt){
     //these define the folders and files that are watched by the "grunt dev" command
     var watchFiles = {
         javascript: [
-            'assets/javascript/app.js',
-            'assets/javascript/**/*.js'
+            'webapp/assets/javascript/app.js',
+            'webapp/assets/javascript/**/*.js'
         ],
         css: [
-            'assets/css/app.css',
-            'assets/css/**/*.css'
+            'webapp/assets/css/app.css',
+            'webapp/assets/css/**/*.css'
         ],
         images: [
-            'assets/images/**/*'
+            'webapp/assets/images/**/*'
         ]
     };
     grunt.initConfig({
@@ -37,8 +37,8 @@ module.exports = function(grunt){
             },
             target: {
                 files: {
-                    'public/app.main.min.css': [
-                        'bower_components/normalize-css/normalize.css'
+                    'webapp/public/app.main.min.css': [
+                        'webapp/bower_components/normalize-css/normalize.css'
                     ].concat(watchFiles.css)
                 }
             }
@@ -51,9 +51,9 @@ module.exports = function(grunt){
             default: {
                 files: [{
                     expand: true,
-                    cwd: 'assets/images/',// Src matches are relative to this path
+                    cwd: 'webapp/assets/images/',// Src matches are relative to this path
                     src: ['**/*.{png,jpg,gif}'],// Actual patterns to match
-                    dest: 'public/images/'// Destination path prefix
+                    dest: 'webapp/public/images/'// Destination path prefix
                 }]
             }
         },
@@ -84,7 +84,7 @@ module.exports = function(grunt){
                 ]
             },
             dist: {
-                src: 'public/app.main.min.css'
+                src: 'webapp/public/app.main.min.css'
             }
         },
         /*
@@ -94,11 +94,11 @@ module.exports = function(grunt){
         uglify: {
             base: {
                 files: {
-                    'public/app.base.min.js': [
-                        'bower_components/jquery/dist/jquery.min.js',
-                        'bower_components/bluebird/js/browser/bluebird.min.js',
-                        'bower_components/velocity/velocity.min.js',
-                        'bower_components/velocity/velocity.ui.min.js'
+                    'webapp/public/app.base.min.js': [
+                        'webapp/bower_components/jquery/dist/jquery.min.js',
+                        'webapp/bower_components/bluebird/js/browser/bluebird.min.js',
+                        'webapp/bower_components/velocity/velocity.min.js',
+                        'webapp/bower_components/velocity/velocity.ui.min.js'
                     ]
                 },
                 options: {
@@ -111,7 +111,7 @@ module.exports = function(grunt){
             },
             main: {
                 files: {
-                    'public/app.main.min.js': watchFiles.javascript
+                    'webapp/public/app.main.min.js': watchFiles.javascript
                 },
                 options: {
                     banner: '/*! <%= grunt.template.today("yyyy-mm-dd") %> */\n',

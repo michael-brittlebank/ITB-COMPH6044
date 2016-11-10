@@ -9,6 +9,6 @@ $controllerFiles = [
 
 //load files
 foreach($controllerFiles as $controller){
-    $filePath = join('/',[$controllerPath, $controller]);
+    $filePath = join('/',[$_SERVER['DOCUMENT_ROOT'], 'app', $controllerPath, $controller]);
     include_once($filePath);
 }
