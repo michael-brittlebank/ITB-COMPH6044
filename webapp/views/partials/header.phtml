@@ -1,11 +1,15 @@
 <?php
-function isActiveTab($tab, $data){
+function isActiveMenu($tab, $data){
     return $tab === $data['activePage']?'active':'';
+}
+
+function isActiveSubMenu($tab, $data){
+    return $tab === strtolower($data['pageTitle'])?'active':'';
 }
 ?>
 <html>
 <head>
-    <title><?php echo $data['pageTitle'];?></title>
+    <title><?php echo $data['metaTitle'];?></title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="/public/app.main.min.css">
     <link href="https://fonts.googleapis.com/css?family=Raleway" rel="stylesheet">
@@ -19,41 +23,41 @@ function isActiveTab($tab, $data){
         </div>
         <nav class="col-sm-12 col-md-8 text-right">
             <ul class="standard-menu">
-                <li class="<?php echo isActiveTab('favourites',$data);?>">
+                <li class="<?php echo isActiveMenu('favourites',$data);?>">
                     <a href="/favourites">Favourites</a>
                     <ul class="sub-menu">
-                        <li>
+                        <li class="<?php echo isActiveSubMenu('activities',$data);?>">
                             <a href="/favourites/activities">Activities</a>
                         </li>
-                        <li>
+                        <li class="<?php echo isActiveSubMenu('places',$data);?>">
                             <a href="/favourites/places">Places</a>
                         </li>
-                        <li>
+                        <li class="<?php echo isActiveSubMenu('toys',$data);?>">
                             <a href="/favourites/toys">Toys</a>
                         </li>
                     </ul>
                 </li>
-                <li class="<?php echo isActiveTab('growing-up',$data);?>">
+                <li class="<?php echo isActiveMenu('growing-up',$data);?>">
                     <a href="/growing-up">Growing Up</a>
                     <ul class="sub-menu">
-                        <li>
+                        <li class="<?php echo isActiveSubMenu('puppyhood',$data);?>">
                             <a href="/growing-up/puppyhood">Puppyhood</a>
                         </li>
-                        <li>
+                        <li class="<?php echo isActiveSubMenu('adolescence',$data);?>">
                             <a href="/growing-up/adolescence">Adolescence</a>
                         </li>
-                        <li>
+                        <li class="<?php echo isActiveSubMenu('adulthood',$data);?>">
                             <a href="/growing-up/adulthood">Adulthood</a>
                         </li>
                     </ul>
                 </li>
-                <li class="<?php echo isActiveTab('barkbook',$data);?>">
+                <li class="<?php echo isActiveMenu('barkbook',$data);?>">
                     <a href="/barkbook">Barkbook</a>
                 </li>
-                <li class="<?php echo isActiveTab('gallery',$data);?>">
+                <li class="<?php echo isActiveMenu('gallery',$data);?>">
                     <a href="/gallery">Gallery</a>
                 </li>
-                <li class="<?php echo isActiveTab('contact',$data);?>">
+                <li class="<?php echo isActiveMenu('contact',$data);?>">
                     <a href="/contact">Contact</a>
                 </li>
             </ul>

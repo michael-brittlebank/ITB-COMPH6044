@@ -51,6 +51,6 @@ header {
     transition: background-color 300ms ease-out 0s;
 }
 
-.sub-menu a:hover {
+.sub-menu a:hover, .sub-menu li.active a {
     background-color: #f8f8f8;
 }
