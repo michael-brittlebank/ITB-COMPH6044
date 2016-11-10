@@ -5,7 +5,7 @@
 #dependencies
 vendor/
 node_modules/
-bower_components/
+webapp/bower_components/
 
 #build files
-public/
+webapp/public/

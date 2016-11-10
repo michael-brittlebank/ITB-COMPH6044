@@ -9,11 +9,11 @@ $app->get('/', function ($request, $response) {
 
 //default page handler
 $app->get('/{page}', function ($request, $response, $args) use ($app) {
-    $pageName = $args['page'];
-    $viewData['pageTitle'] = ucwords($pageName);
-    $viewData['viewsDirectory'] = VIEW_DIRECTORY;
+    $pageName = strtolower($args['page']);
     $fileName = $pageName.'.phtml';
-    if(file_exists(VIEW_DIRECTORY.$fileName)){
+    if(file_exists(join('/',[VIEW_DIRECTORY,$fileName]))){
+        $viewData['pageTitle'] = ucwords($pageName);
+        $viewData['viewsDirectory'] = VIEW_DIRECTORY;
         return $this->renderer->render($response, $fileName, $viewData);
     } else {
         throw new \Slim\Exception\NotFoundException($request, $response);
@@ -21,13 +21,15 @@ $app->get('/{page}', function ($request, $response, $args) use ($app) {
 });
 
 //
-$app->get('/{page}/{page2}', function ($request, $response, $args) use ($app) {
-    $pageName = $args['page'];
-    $viewData['pageTitle'] = ucwords($pageName);
+$app->get('/{directory}/{page}', function ($request, $response, $args) use ($app) {
+    $pageName = strtolower($args['page']);
+    $directoryName = strtolower($args['directory']);
     $fileName = $pageName.'.phtml';
-    $viewData['viewsDirectory'] = VIEW_DIRECTORY;
-    if(file_exists(VIEW_DIRECTORY.$fileName)){
-        return $this->renderer->render($response, $fileName, $viewData);
+    $viewTemplate = join('/',[$directoryName,$fileName]);
+    if(file_exists(join('/',[VIEW_DIRECTORY,$viewTemplate]))){
+        $viewData['pageTitle'] = ucwords($pageName);
+        $viewData['viewsDirectory'] = VIEW_DIRECTORY;
+        return $this->renderer->render($response, $viewTemplate, $viewData);
     } else {
         throw new \Slim\Exception\NotFoundException($request, $response);
     }
