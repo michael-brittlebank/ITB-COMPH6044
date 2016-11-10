@@ -2,7 +2,7 @@
 
 //homepage
 $app->get('/', function ($request, $response) {
-    $viewData['pageTitle'] = 'Homepage';
+    $viewData['pageTitle'] = 'Zero Trouble';
     $viewData['viewsDirectory'] = VIEW_DIRECTORY;
     return $this->renderer->render($response, 'homepage.phtml', $viewData);
 });
@@ -12,7 +12,8 @@ $app->get('/{page}', function ($request, $response, $args) use ($app) {
     $pageName = strtolower($args['page']);
     $fileName = $pageName.'.phtml';
     if(file_exists(join('/',[VIEW_DIRECTORY,$fileName]))){
-        $viewData['pageTitle'] = ucwords($pageName);
+        $viewData['pageTitle'] = META_TITLE_PREFIX.ucwords(str_replace('-',' ',$pageName));
+        $viewData['activePage'] = $pageName;
         $viewData['viewsDirectory'] = VIEW_DIRECTORY;
         return $this->renderer->render($response, $fileName, $viewData);
     } else {
@@ -27,7 +28,8 @@ $app->get('/{directory}/{page}', function ($request, $response, $args) use ($app
     $fileName = $pageName.'.phtml';
     $viewTemplate = join('/',[$directoryName,$fileName]);
     if(file_exists(join('/',[VIEW_DIRECTORY,$viewTemplate]))){
-        $viewData['pageTitle'] = ucwords($pageName);
+        $viewData['pageTitle'] = META_TITLE_PREFIX.ucwords((str_replace('-',' ',$pageName)));
+        $viewData['activePage'] = $directoryName;
         $viewData['viewsDirectory'] = VIEW_DIRECTORY;
         return $this->renderer->render($response, $viewTemplate, $viewData);
     } else {

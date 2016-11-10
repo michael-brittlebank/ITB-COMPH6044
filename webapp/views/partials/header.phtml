@@ -1,3 +1,8 @@
+<?php
+function isActiveTab($tab, $data){
+    return $tab === $data['activePage']?'active':'';
+}
+?>
 <html>
 <head>
     <title><?php echo $data['pageTitle'];?></title>
@@ -14,7 +19,7 @@
         </div>
         <nav class="col-sm-12 col-md-8 text-right">
             <ul class="standard-menu">
-                <li class="active">
+                <li class="<?php echo isActiveTab('favourites',$data);?>">
                     <a href="/favourites">Favourites</a>
                     <ul class="sub-menu">
                         <li>
@@ -28,7 +33,7 @@
                         </li>
                     </ul>
                 </li>
-                <li>
+                <li class="<?php echo isActiveTab('growing-up',$data);?>">
                     <a href="/growing-up">Growing Up</a>
                     <ul class="sub-menu">
                         <li>
@@ -42,13 +47,13 @@
                         </li>
                     </ul>
                 </li>
-                <li>
+                <li class="<?php echo isActiveTab('barkbook',$data);?>">
                     <a href="/barkbook">Barkbook</a>
                 </li>
-                <li>
+                <li class="<?php echo isActiveTab('gallery',$data);?>">
                     <a href="/gallery">Gallery</a>
                 </li>
-                <li>
+                <li class="<?php echo isActiveTab('contact',$data);?>">
                     <a href="/contact">Contact</a>
                 </li>
             </ul>
