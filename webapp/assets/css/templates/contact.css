@@ -1,0 +1,13 @@
+#page-contact label {
+    display: block;
+}
+
+#page-contact input {
+    width: 100%;
+    margin-bottom: 20px;
+}
+
+#page-contact textarea {
+    width: 100%;
+    max-width: 100%;
+}
