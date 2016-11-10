@@ -7,17 +7,19 @@ header {
 /*dropdown menu*/
 
 .standard-menu > .col:hover .sub-menu {
-    display: block;
+    opacity: 1;
+    z-index: 1001;
 }
 
 .sub-menu {
     position: absolute;
-    display: none;
+    opacity: 0;
     padding: 0;
     list-style: none;
     background: white;
     text-align: left;
-    z-index: 1001;
+    z-index: -1;
+    transition: opacity 300ms ease-out 0s,z-index 300ms ease-out 0s;
 }
 
 .sub-menu a {
