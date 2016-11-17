@@ -1,8 +1,21 @@
-<?php include_once($data['viewsDirectory'].'partials/header.phtml'); ?>
+<?php 
+$carouselImages = [
+    'couch.jpg',
+    'sleep.jpg'
+];
+
+include_once($data['viewsDirectory'].'partials/header.phtml'); ?>
     <main class="container">
         <div class="row">
             <div class="col-sm-12">
-                <h1 class="page-title"><?php echo $data['pageTitle'];?></h1>
+                <h1 class="page-title">Zero Trouble</h1>
+                <div class="image-carousel">
+                    <?php foreach($carouselImages as $image){ ?>
+                        <div>
+                            <img src="<?php echo $data['imagesDirectory'].'homepage/'.$image;?>" />
+                        </div>
+                    <?php } ?>
+                </div>
             </div>
         </div>
     </main>

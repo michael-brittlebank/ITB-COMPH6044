@@ -1,6 +1,20 @@
 <?php
 
 /**
+ * services
+ */
+$servicesPath = 'services';
+$servicesFiles = [
+    'util',
+];
+
+//load files
+foreach($servicesFiles as $services){
+    $filePath = join('/',[$_SERVER['DOCUMENT_ROOT'], 'app', $servicesPath, $services.'.php']);
+    include_once($filePath);
+}
+
+/**
  * middleware
  */
 $middlewarePath = 'middleware';

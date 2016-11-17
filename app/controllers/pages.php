@@ -4,8 +4,7 @@
 $app->get('/', function ($request, $response) {
     $viewData['metaTitle'] = 'Zero Trouble';
     $viewData['pageTitle'] = '';
-    $viewData['viewsDirectory'] = VIEW_DIRECTORY;
-    return $this->renderer->render($response, 'homepage.phtml', $viewData);
+    return $this->renderer->render($response, 'homepage.phtml', array_merge($viewData, Services\Util::getGlobalVariables()));
 });
 
 //default page handler
@@ -16,8 +15,7 @@ $app->get('/{page}', function ($request, $response, $args) use ($app) {
         $viewData['metaTitle'] = META_TITLE_PREFIX.ucwords(str_replace('-',' ',$pageName));
         $viewData['pageTitle'] = ucwords(str_replace('-',' ',$pageName));
         $viewData['activePage'] = $pageName;
-        $viewData['viewsDirectory'] = VIEW_DIRECTORY;
-        return $this->renderer->render($response, $fileName, $viewData);
+        return $this->renderer->render($response, $fileName, array_merge($viewData, Services\Util::getGlobalVariables()));
     } else {
         throw new \Slim\Exception\NotFoundException($request, $response);
     }
@@ -33,8 +31,7 @@ $app->get('/{directory}/{page}', function ($request, $response, $args) use ($app
         $viewData['metaTitle'] = META_TITLE_PREFIX.ucwords(str_replace('-',' ',$pageName));
         $viewData['pageTitle'] = ucwords(str_replace('-',' ',$pageName));
         $viewData['activePage'] = $directoryName;
-        $viewData['viewsDirectory'] = VIEW_DIRECTORY;
-        return $this->renderer->render($response, $viewTemplate, $viewData);
+        return $this->renderer->render($response, $viewTemplate, array_merge($viewData, Services\Util::getGlobalVariables()));
     } else {
         throw new \Slim\Exception\NotFoundException($request, $response);
     }

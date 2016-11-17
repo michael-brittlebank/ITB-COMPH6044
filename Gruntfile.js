@@ -38,7 +38,8 @@ module.exports = function(grunt){
             target: {
                 files: {
                     'webapp/public/app.main.min.css': [
-                        'webapp/bower_components/normalize-css/normalize.css'
+                        'webapp/bower_components/normalize-css/normalize.css',
+                        'webapp/bower_components/slick-carousel/slick/slick.css'
                     ].concat(watchFiles.css)
                 }
             }
@@ -98,7 +99,8 @@ module.exports = function(grunt){
                         'webapp/bower_components/jquery/dist/jquery.min.js',
                         'webapp/bower_components/bluebird/js/browser/bluebird.min.js',
                         'webapp/bower_components/velocity/velocity.min.js',
-                        'webapp/bower_components/velocity/velocity.ui.min.js'
+                        'webapp/bower_components/velocity/velocity.ui.min.js',
+                        'webapp/bower_components/slick-carousel/slick/slick.min.js'
                     ]
                 },
                 options: {

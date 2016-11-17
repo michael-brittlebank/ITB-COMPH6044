@@ -39,6 +39,7 @@ input:focus, textarea:focus {
     outline: none;
 }
 
+
 /* helper classes */
 /*-----------------------------*/
 .faded-out {
@@ -76,10 +77,6 @@ input:focus, textarea:focus {
     cursor: pointer;
 }
 
-.button:active {
-
-}
-
 /* http://www.labnol.org/internet/embed-responsive-google-maps/28333/ */
 .google-maps {
     position: relative;
@@ -87,6 +84,7 @@ input:focus, textarea:focus {
     height: 0;
     overflow: hidden;
 }
+
 .google-maps iframe {
     position: absolute;
     top: 0;
