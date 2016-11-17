@@ -23,9 +23,16 @@ a:hover {
     color: #d3d3d3;
 }
 
+label {
+    display: block;
+}
+
 input, textarea {
     border: 1px solid #eeeeee;
     padding: 5px;
+    width: 100%;
+    max-width: 100%;
+    margin-bottom: 20px;
 }
 
 input:focus, textarea:focus {
@@ -64,6 +71,14 @@ input:focus, textarea:focus {
     padding: 0 20px 0 0;
 }
 
+.button {
+    padding: 5px 20px;
+    cursor: pointer;
+}
+
+.button:active {
+
+}
 
 /* http://www.labnol.org/internet/embed-responsive-google-maps/28333/ */
 .google-maps {
