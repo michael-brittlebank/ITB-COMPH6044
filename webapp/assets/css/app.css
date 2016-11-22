@@ -23,10 +23,6 @@ a:hover {
     color: #d3d3d3;
 }
 
-main a[target="_blank"] {
-    text-decoration: underline;
-}
-
 label {
     display: block;
 }
@@ -69,6 +65,10 @@ input:focus, textarea:focus {
 
 .text-justify {
     text-align: justify;
+}
+
+.text-decoration {
+    text-decoration: underline;
 }
 
 

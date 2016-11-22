@@ -4,16 +4,18 @@ $barkbookData = [
     'age'=>'2.5 Years Old',
     'breed'=>'Golden Retriever',
     'friendship'=>'Tom and Jerry',
-    'image'=>''
+    'image'=>'kaycee.jpg'
 ];
 
 include_once($data['viewsDirectory'].'partials/header.phtml'); ?>
     <main class="container">
         <div class="row">
-            <div class="col-sm-12">
-                <h1 class="page-title"><?php echo $data['pageTitle'];?></h1>
+            <?php include_once('partials/sidebar.phtml');?>
+            <div class="col-sm-8">
+                <p>
+                    Kaycee has gotten quite big now, as can be seen in the background of the video about <a class="text-decoration" href="/favourites/toys">Zero's toys</a>
+                </p>
             </div>
-            <?php include_once('partials/template.phtml');?>
         </div>
     </main>
 <?php include_once($data['viewsDirectory'].'partials/footer.phtml');
