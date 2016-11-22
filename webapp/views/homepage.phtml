@@ -1,21 +1,88 @@
-<?php 
+<?php
 $carouselImages = [
     'couch.jpg',
     'sleep.jpg'
 ];
 
 include_once($data['viewsDirectory'].'partials/header.phtml'); ?>
-    <main class="container">
-        <div class="row">
-            <div class="col-sm-12">
-                <h1 class="page-title">Zero Trouble</h1>
-                <div class="image-carousel">
-                    <?php foreach($carouselImages as $image){ ?>
-                        <div>
-                            <img src="<?php echo $data['imagesDirectory'].'homepage/'.$image;?>" />
-                        </div>
-                    <?php } ?>
+    <main>
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-12">
+                    <h1 class="page-title">Zero Trouble</h1>
                 </div>
+            </div>
+        </div>
+        <section>
+            <div class="image-carousel">
+                <?php foreach($carouselImages as $image){ ?>
+                    <div>
+                        <img src="<?php echo $data['imagesDirectory'].'homepage/'.$image;?>" />
+                    </div>
+                <?php } ?>
+            </div>
+        </section>
+        <div class="container">
+            <div class="row">
+                <section class="col-sm-6">
+                    <h3 class="text-center">Fun Fact</h3>
+                    <p class="text-justify">
+                        Zero was named after <a href="http://wiki.teamliquid.net/starcraft/ZerO" target="_blank">ZerO</a>, a professional StarCraft player in South Korea.  Close second choices were <a href="http://wiki.teamliquid.net/starcraft/Bisu" target="_blank">Bisu</a> and <a href="http://wiki.teamliquid.net/starcraft/BoxeR" target="_blank">BoxeR</a>.  He was already 6 months old by the time I learned that there was a famous <em>dog</em> named <a href="http://disney.wikia.com/wiki/Zero" target="_blank">Zero</a>.
+                    </p>
+                    <div class="youtube">
+                        <iframe width="560" height="315" src="https://www.youtube.com/embed/5zqy1Qotczc" frameborder="0" allowfullscreen></iframe>
+                    </div>
+                </section>
+                <section class="col-sm-6">
+                    <h3 class="text-center">About</h3>
+                    <p class="text-justify">
+                        Important details:
+                    </p>
+                    <ul>
+                        <li>
+                            <strong>Sex:</strong> Male
+                        </li>
+                        <li>
+                            <strong>Breed:</strong> Maltese-Poodle mix
+                        </li>
+                        <li>
+                            <strong>Color:</strong> Cream/Tan
+                        </li>
+                        <li>
+                            <strong>Weight:</strong> 8lbs/3.5kg
+                        </li>
+                        <li>
+                            <strong>Birthday:</strong> January 2, 2014
+                        </li>
+                        <li>
+                            <strong>Traveled To:</strong>
+                            <ul>
+                                <li>
+                                    Canada
+                                    <ul>
+                                        <li>
+                                            Ontario
+                                        </li>
+                                    </ul>
+                                </li>
+                                <li>
+                                    USA
+                                    <ul>
+                                        <li>
+                                            North Carolina
+                                        </li>
+                                        <li>
+                                            Wisconsin
+                                        </li>
+                                    </ul>
+                                </li>
+                                <li>
+                                    Ireland
+                                </li>
+                            </ul>
+                        </li>
+                    </ul>
+                </section>
             </div>
         </div>
     </main>
