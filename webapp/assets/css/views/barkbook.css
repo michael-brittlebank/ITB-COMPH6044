@@ -38,3 +38,8 @@
 .barkbook-list-outer-border:hover .barkbook-list-image {
     transform: scale(1.1);
 }
+
+.link-barkbook-back {
+    margin: 0 0 45px 0;
+    display: inline-block;
+}
