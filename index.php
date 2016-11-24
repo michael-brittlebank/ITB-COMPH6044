@@ -15,12 +15,23 @@ if (DEBUG === true){
     ];
 }
 
+//http compression
+$config['cache'] = function () {
+    return new \Slim\HttpCache\CacheProvider();
+};
+
 //create slim app
 $app = new \Slim\App($config);
 
+//caching
+$app->add(new \Slim\HttpCache\Cache('public', 86400));
 
 //get slim container
 $container = $app->getContainer();
+
+$container['cache'] = function () {
+    return new \Slim\HttpCache\CacheProvider();
+};
 
 //register view system with slim
 $container['view'] = function () {
