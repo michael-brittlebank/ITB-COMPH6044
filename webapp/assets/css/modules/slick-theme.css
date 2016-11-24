@@ -211,4 +211,5 @@ this is the import of the slick slider css.  we've done this to remove the custo
 
 .slick-slide {
     outline: none;
+    height: auto!important;
 }
