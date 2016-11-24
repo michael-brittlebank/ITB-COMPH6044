@@ -47,6 +47,13 @@ input:focus, textarea:focus {
     opacity: 0;
 }
 
+.position-relative {
+    position: relative;
+}
+
+
+/* text classes */
+/*-----------------------------*/
 .text-bold {
     font-weight: bold;
 }
@@ -69,6 +76,10 @@ input:focus, textarea:focus {
 
 .text-decoration {
     text-decoration: underline;
+}
+
+.text-small {
+    font-size: 8px;
 }
 
 
