@@ -55,6 +55,11 @@ input:focus, textarea:focus {
     position: relative;
 }
 
+.body-image {
+    width: 100%;
+    margin-bottom: 10px;
+}
+
 
 /* text classes */
 /*-----------------------------*/
