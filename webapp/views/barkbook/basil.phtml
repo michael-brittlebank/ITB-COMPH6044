@@ -1,19 +1,11 @@
-<?php
-$barkbookData = [
-    'name'=>'Basil',
-    'age'=>'3 Years Old',
-    'breed'=>'Miniature Schnauzer',
-    'friendship'=>'Puppy Love',
-    'image'=>'basil.jpg'
-];
-
+<?php include_once($data['viewsDirectory'].'helpers.php');
 include_once($data['viewsDirectory'].'partials/header.phtml'); ?>
     <main class="container">
         <div class="row">
             <?php include_once('partials/sidebar.phtml');?>
             <div class="col-sm-8">
                 <p>
-                    this is the template.  hello <?php echo getVariable($barkbookData,'body');?>
+                    this is the template.  hello <?php echo getVariable($barkbookData,'name');?>
                 </p>
                 <div class="youtube">
                     <iframe width="560" height="315" src="https://www.youtube.com/embed/C-5MsOgKYW0" frameborder="0" allowfullscreen></iframe>

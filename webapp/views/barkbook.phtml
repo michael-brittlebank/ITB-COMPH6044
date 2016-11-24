@@ -1,9 +1,15 @@
-<?php include_once($data['viewsDirectory'].'partials/header.phtml'); ?>
+<?php include_once($data['viewsDirectory'].'helpers.php');
+include_once($data['viewsDirectory'].'partials/header.phtml'); ?>
     <main class="container">
         <div class="row">
             <div class="col-sm-12">
                 <h1 class="page-title"><?php echo $data['pageTitle'];?></h1>
             </div>
+            <?php foreach($barkbookData as $friend){ ?>
+                <div class="col-sm-6 col-md-4">
+                    <a href="/barkbook/<?php echo getVariable($friend,'url');?>"><?php echo getVariable($friend,'name');?></a>
+                </div>
+            <?php } ?>
         </div>
     </main>
 <?php include_once($data['viewsDirectory'].'partials/footer.phtml');

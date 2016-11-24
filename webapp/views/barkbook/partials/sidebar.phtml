@@ -1,18 +1,8 @@
-<?php
-
-function getVariable($barkbookData, $variableName){
-    if(isset($barkbookData[$variableName])){
-        return $barkbookData[$variableName];
-    } else {
-        return '';
-    }
-}
-?>
-
 <div class="col-sm-4">
     <img src="<?php echo $data['imagesDirectory'].'barkbook/'.getVariable($barkbookData,'image');?>" alt="<?php echo getVariable($barkbookData,'name');?>"/>
     <h1><?php echo getVariable($barkbookData,'name');?></h1>
     <p><strong>Age:</strong> <?php echo getVariable($barkbookData,'age');?></p>
     <p><strong>Breed:</strong> <?php echo getVariable($barkbookData,'breed');?></p>
+    <p><strong>Location:</strong> <?php echo getVariable($barkbookData,'location');?></p>
     <p><strong>Friendship Level:</strong> <?php echo getVariable($barkbookData,'friendship');?></p>
 </div>

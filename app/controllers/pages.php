@@ -15,6 +15,9 @@ $app->get('/{page}', function ($request, $response, $args) use ($app) {
         $viewData['metaTitle'] = META_TITLE_PREFIX.ucwords(str_replace('-',' ',$pageName));
         $viewData['pageTitle'] = ucwords(str_replace('-',' ',$pageName));
         $viewData['activePage'] = $pageName;
+        if(stripos($pageName,'barkbook')!== false){
+            $viewData['barkbookData'] = Models\Barkbook::getBarkbookData();
+        }
         return $this->renderer->render($response, $fileName, array_merge($viewData, Services\Util::getGlobalVariables()));
     } else {
         throw new \Slim\Exception\NotFoundException($request, $response);
@@ -31,6 +34,9 @@ $app->get('/{directory}/{page}', function ($request, $response, $args) use ($app
         $viewData['metaTitle'] = META_TITLE_PREFIX.ucwords(str_replace('-',' ',$pageName));
         $viewData['pageTitle'] = ucwords(str_replace('-',' ',$pageName));
         $viewData['activePage'] = $directoryName;
+        if(stripos($directoryName,'barkbook')!== false){
+            $viewData['barkbookData'] = Models\Barkbook::getBarkbookFriendByName($pageName);
+        }
         return $this->renderer->render($response, $viewTemplate, array_merge($viewData, Services\Util::getGlobalVariables()));
     } else {
         throw new \Slim\Exception\NotFoundException($request, $response);
