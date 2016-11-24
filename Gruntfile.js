@@ -13,15 +13,15 @@ module.exports = function(grunt){
     //these define the folders and files that are watched by the "grunt dev" command
     var watchFiles = {
         javascript: [
-            'webapp/assets/javascript/app.js',
-            'webapp/assets/javascript/**/*.js'
+            'webapp/javascript/app.js',
+            'webapp/javascript/**/*.js'
         ],
         css: [
-            'webapp/assets/css/app.css',
-            'webapp/assets/css/**/*.css'
+            'webapp/css/app.css',
+            'webapp/css/**/*.css'
         ],
         images: [
-            'webapp/assets/images/**/*'
+            'webapp/images/**/*'
         ]
     };
     grunt.initConfig({
@@ -52,7 +52,7 @@ module.exports = function(grunt){
             default: {
                 files: [{
                     expand: true,
-                    cwd: 'webapp/assets/images/',// Src matches are relative to this path
+                    cwd: 'webapp/images/',// Src matches are relative to this path
                     src: ['**/*.{png,jpg,gif}'],// Actual patterns to match
                     dest: 'webapp/public/images/'// Destination path prefix
                 }]
