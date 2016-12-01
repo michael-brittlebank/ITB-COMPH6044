@@ -43,3 +43,7 @@
     margin: 0 0 45px 0;
     display: inline-block;
 }
+
+#barkbook-sidebar-container {
+    margin-bottom: 30px;
+}
