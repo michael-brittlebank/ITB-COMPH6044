@@ -1,0 +1,11 @@
+#page-favourites .fa {
+    font-size: 3rem;
+    position: absolute;
+    bottom: 0;
+    top: 0;
+    right: 0;
+    left: 0;
+    margin: auto;
+    display: inline-block;
+    height: 3rem;
+}
