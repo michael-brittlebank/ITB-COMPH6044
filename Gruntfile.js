@@ -170,6 +170,7 @@ module.exports = function(grunt){
 
     // Development task.  After started, will monitor files for changes and then recompile as needed
     grunt.registerTask('dev', [
+        'newer:copy',
         'newer:imagemin',
         'newer:uglify',
         'newer:cssmin',
@@ -179,6 +180,7 @@ module.exports = function(grunt){
 
     // Build task. For initializing environment after clone or for deploy in a remote environment
     grunt.registerTask('build', [
+        'newer:copy',
         'newer:imagemin',
         'uglify',
         'cssmin',
