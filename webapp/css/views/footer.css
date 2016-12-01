@@ -19,3 +19,15 @@ footer .fa {
     bottom: 0;
     left: 0;
 }
+
+#footer-social-container {
+    text-align: center;
+    margin-bottom: 10px;
+}
+
+@media only screen and (min-width: 768px) {
+    #footer-social-container {
+        text-align: right;
+        margin-bottom: 0;
+    }
+}
