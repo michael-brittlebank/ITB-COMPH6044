@@ -9,3 +9,11 @@
     display: inline-block;
     height: 3rem;
 }
+
+.favourites-sidebar-left-image {
+    top: 0;
+}
+
+.favourites-sidebar-right-image {
+    bottom: 0;
+}

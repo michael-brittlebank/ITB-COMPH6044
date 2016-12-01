@@ -62,13 +62,14 @@
 
 .sidebar-image {
     position: absolute;
-    top: 0;
     left: 0;
     right: 0;
-    bottom: 0;
     margin: auto;
-    width: calc(100% - 20px);
+    max-height: 100%;
+    max-width: 90%;/* fallback */
+    max-width: calc(100% - 20px);
 }
+
 
 /* http://www.labnol.org/internet/embed-responsive-google-maps/28333/ */
 .google-maps {
