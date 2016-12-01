@@ -38,10 +38,26 @@ module.exports = function(grunt){
             target: {
                 files: {
                     'webapp/public/app.main.min.css': [
+                        'webapp/vendor/font-awesome-4.7.0/css/font-awesome.css',
                         'webapp/bower_components/normalize-css/normalize.css',
                         'webapp/bower_components/slick-carousel/slick/slick.css'
                     ].concat(watchFiles.css)
                 }
+            }
+        },
+        /*
+         Copies assets into the build folder
+         https://github.com/gruntjs/grunt-contrib-copy
+         */
+        copy :{
+            fonts: {
+                expand: true,
+                src: [
+                    'webapp/vendor/font-awesome-4.7.0/fonts/**'
+                ],
+                dest: 'webapp/public/fonts/',
+                flatten: true,
+                filter: 'isFile'
             }
         },
         /*

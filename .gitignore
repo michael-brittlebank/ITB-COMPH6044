@@ -4,6 +4,7 @@
 
 #dependencies
 vendor/
+!webapp/vendor/
 node_modules/
 webapp/bower_components/
 
