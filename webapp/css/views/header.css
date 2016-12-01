@@ -74,3 +74,13 @@ header {
 .sub-menu a:hover, .sub-menu li.active a {
     background-color: #f8f8f8;
 }
+
+#header-mobile-menu {
+    font-size: 2.5rem;
+    margin: auto;
+    position: absolute;
+    top: 0;
+    right: 12px;
+    bottom: 0;
+    height: 2.5rem;
+}
