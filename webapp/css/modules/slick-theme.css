@@ -213,3 +213,7 @@ this is the import of the slick slider css.  we've done this to remove the custo
     outline: none;
     height: auto!important;
 }
+
+.slick-slide img {
+    width: 100%;
+}
